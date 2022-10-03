@@ -12,5 +12,8 @@ const db = mongoose.connection;
 db.on('open', () => console.log('DB connection successed'));
 db.on('error', () => console.log('DB connection error'));
 
+app.use(express.json());
+
+
 app.use('/', usersRoute);
 app.use('/', postsRoute);

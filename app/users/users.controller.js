@@ -17,12 +17,12 @@ export function getAllUsers(req, res, next){
 
 export function createUser(req, res, next){
     let newUser = userModel({
-        id: 'bobo1234',
-        password: '2222',
-        name: 'qiwenye',
-        address: 'Calgary',
-        phone: '5879692222',
-        email: 'bobo@gmail.com'
+        id: req.body.id,
+        password: req.body.password,
+        name: req.body.name,
+        address: req.body.address,
+        phone: req.body.phone,
+        email: req.body.email
     })
 
     userModel.create(newUser, (err, User) => {
